@@ -149,7 +149,7 @@ setLimits <- function(gg.add, y.df, membership,
 
 
 addScatter <- function(gg.add, y.df, n.clusters, y.obs.col, clustered.plot,
-                       y.cluster.col, n.obs, point.size, point.alpha) {
+                       y.cluster.col, n.obs, point.size, point.alpha, add.data) {
 
   # fix visible binding
   y <- y.df$y
@@ -176,6 +176,17 @@ addScatter <- function(gg.add, y.df, n.clusters, y.obs.col, clustered.plot,
                           size = point.size,
                           alpha = point.alpha,
                           col = rep(y.obs.col, length = n.obs))
+  }
+  if (!is.null(add.data)){
+    for (ii in 1:dim(add.data)[2]-1){
+     item_to_plot<-colnames(add.data)[ii]
+     gg.add <- gg.add +
+     ggplot2::geom_point(data=add.data, ggplot2::aes(x = xaxis,
+                                       y = item_to_plot),
+                          size = point.size,
+                          alpha = point.alpha,
+                          col = rep(y.obs.col, length = n.obs))
+    }
   }
   return(gg.add)
 }
