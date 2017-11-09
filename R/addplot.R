@@ -1,5 +1,6 @@
 generate_add_on_plot <- function(X,
                                  y,
+                                 add.data = NULL, 
                                  location = c("top", "right"),
                                  membership,
                                  plot.type = c("scatter", "bar", "boxplot",
