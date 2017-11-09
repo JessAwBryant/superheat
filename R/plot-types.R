@@ -179,10 +179,10 @@ addScatter <- function(gg.add, y.df, n.clusters, y.obs.col, clustered.plot,
   }
   if (!is.null(add.data)){
     for (ii in 1:dim(add.data)[2]-1){
-     item_to_plot<-colnames(add.data)[ii]
+     print(add.data) 
      gg.add <- gg.add +
      ggplot2::geom_point(data=add.data, ggplot2::aes(x = xaxis,
-                                       y = item_to_plot),
+                                       y = colnames(add.data)[ii]),
                           size = point.size,
                           alpha = point.alpha,
                           col = rep(y.obs.col, length = n.obs))
