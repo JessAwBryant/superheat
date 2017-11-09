@@ -167,7 +167,7 @@ generate_add_on_plot <- function(X,
   } else if (plot.type == "scatterline") {
     # add the scatterplot
     scatter.arg.list <- c(as.list(environment()))
-    scatter.arg.list <- scatter.arg.list[names(formals(addScatter))]
+    scatter.arg.list <- scatter.arg.list[names(formals(addScatter)),add.data]
     scatter.arg.list <- scatter.arg.list[!is.na(names(scatter.arg.list))]
     gg.add <- do.call(addScatter, scatter.arg.list)
     # add the line
