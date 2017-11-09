@@ -929,8 +929,8 @@ superheat <- function(X,
                     plot = grob.layout,
                     membership.cols = membership.cols,
                     membership.rows = membership.rows,
-                    gg.top = gg.top,
-                    grob.layout = grob.layout)
+                    gg.top = gg.top
+                    )
 
   return(invisible(to.return))
 }
