@@ -273,6 +273,7 @@ superheat <- function(X,
                       X.text = NULL,
                       yt = NULL,
                       yr = NULL,
+                      add.data = NULL, 
                       membership.rows = NULL, # membership for rows
                       membership.cols = NULL, # membership for cols
                       pretty.order.rows = F,
