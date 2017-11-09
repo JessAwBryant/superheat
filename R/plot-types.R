@@ -177,17 +177,17 @@ addScatter <- function(gg.add, y.df, n.clusters, y.obs.col, clustered.plot,
                           alpha = point.alpha,
                           col = rep(y.obs.col, length = n.obs))
   }
-  if (!is.null(add.data)){
-    for (ii in 1:dim(add.data)[2]-1){
-     print(add.data) 
-     gg.add <- gg.add +
-     ggplot2::geom_point(data=add.data, ggplot2::aes(x = xaxis,
-                                       y = colnames(add.data)[ii]),
-                          size = point.size,
-                          alpha = point.alpha,
-                          col = rep(y.obs.col, length = n.obs))
-    }
-  }
+ # if (!is.null(add.data)){
+ #   for (ii in 1:dim(add.data)[2]-1){
+ #    print(add.data) 
+ #    gg.add <- gg.add +
+ #    ggplot2::geom_point(data=add.data, ggplot2::aes(x = xaxis,
+ #                                      y = colnames(add.data)[ii]),
+ #                         size = point.size,
+ #                         alpha = point.alpha,
+ #                         col = rep(y.obs.col, length = n.obs))
+ #   }
+ # }
   return(gg.add)
 }
 
